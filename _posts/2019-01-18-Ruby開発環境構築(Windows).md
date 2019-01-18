@@ -45,5 +45,5 @@ railsアプリケーションを作成するためにrailsを使いたいので�
 5. $ bundle exec rails new rails01 --skip-bundle(ruby本体にインストールされるのを防止) -T(テスト生成しない)
 6. ※オプション .bundle, vendor, gemfile, gemfile.lockを削除
 7. $ cd rails01
-8. $ bundle install --path=vendor/bundle
+8. $ bundle install --path=vendor/bundle --without production
 9. gitignoreに/vendor追加
