@@ -47,3 +47,5 @@ railsアプリケーションを作成するためにrailsを使いたいので�
 7. $ cd rails01
 8. $ bundle install --path=vendor/bundle --without production
 9. gitignoreに/vendor追加
+
+これでrailsアプリケーション内で使われるgemはvendor/bundleの中に閉じ込められた。bundle installのオプションは.bundle/configに保存されるため、gemを追加する場合など、2回目以降はbundle installのみでOK。ここでインストールしたgemを実行する場合は、bundle exec railsなどのようにbundle execをつけて実行する。
