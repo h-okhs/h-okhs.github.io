@@ -42,6 +42,7 @@ msys2 のホームディレクトリは`msys2インストールディレクト�
 
 - Ruby
 - Ruby Solargraph
+- Ruby Comment Doc
 - Beautify
 - ruby-symbols
 - endwise
