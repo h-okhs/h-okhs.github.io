@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "日記 2019/01/23"
-categories: diary
+title:  "vscodeのターミナルをmsys2に変更"
+categories: vscode
 ---
 
 <https://qiita.com/yumetodo/items/42132a1e8435504448aa> このへん見て設定。
