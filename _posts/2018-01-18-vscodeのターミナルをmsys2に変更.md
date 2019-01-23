@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "日記 2019/01/23"
+categories: diary
+---
+
 <https://qiita.com/yumetodo/items/42132a1e8435504448aa> このへん見て設定。
 Windowsの環境変数が引き継がれなかったのでenvに`"MSYS2_PATH_TYPE": "inherit"`を追加してみた。動いてるけどこれで良いのか悪いのかは不明。
 
