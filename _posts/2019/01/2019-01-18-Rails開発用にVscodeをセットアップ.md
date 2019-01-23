@@ -4,10 +4,10 @@ title: "Rails開発用にVscodeをセットアップ"
 categories: vscode
 ---
 
-## この記事で伝えること
+## この記事でやろうとしていること
 
 - VSCodeのターミナルをMSYS2にする
-- Ruby, Rails 開発用にインストールする拡張機能と設定
+- Ruby, Rails開発用の拡張機能インストールと設定
 
 ## ターミナルに MSYS2 を利用する
 
