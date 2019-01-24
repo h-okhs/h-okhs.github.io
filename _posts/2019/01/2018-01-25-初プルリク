@@ -1,0 +1,23 @@
+---
+layout: post
+title: "初プルリク"
+categories: git
+---
+
+使おうと思ったVSCodeのフォーマッター拡張が動かず。
+中でRubyのGemを呼ぶだけの拡張なので動かないことが逆に不思議(ターミナルからは動いている)で、拡張のソースコードを確認。
+
+拡張をデバッグするのに軽くつまずきながら原因は分かった。
+Gemを呼ぶ部分が
+```TypeScript
+const beautifier = cp.spawn("htmlbeautifier", ["-v"]);
+```
+となっており、Windows環境では.batをつけて読んであげないと動かないようだった。
+どうやってWindows環境かどうか判断しようかと思いつつ、そういえばRuby拡張でも同じようにRubocopのGemを呼んでるよなぁと思ってRuby拡張のソースコードを確認。
+こんな感じにコードをパクってきて修正し、プルリク！
+```TypeScript
+const ext = process.platform === "win32" ? ".bat" : "";
+const beautifier = cp.spawn(`htmlbeautifier${ext}`, ["-v"]);
+```
+
+とりこんでくれるかな
