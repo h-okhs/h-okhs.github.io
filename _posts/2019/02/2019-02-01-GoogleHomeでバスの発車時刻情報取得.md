@@ -17,7 +17,7 @@ DialogFlowからAPI呼び出してそのレスポンスを使ってしゃべら�
 超便利じゃんと思いながら設定したら超便利だった話はいずれするかもしれない～～
 
 ということでこんな構成に。
-![構成](https://github.com/h-okhs/seibubus/blob/master/%E6%A7%8B%E6%88%90.pdf "構成")
+<https://github.com/h-okhs/seibubus/blob/master/%E6%A7%8B%E6%88%90.pdf>
 
 理想的にはAPIはバスの情報をJSONで返して、DialogFlow側でスピーチ内容に変換できればよかったけど、
 インラインのフルフィルメントエディターでのAPI呼び出し⇒JSONがうまくできなかった。ログが出せないので何がダメかわからず仕舞。
