@@ -41,9 +41,9 @@ msys2 のホームディレクトリは`msys2インストールディレクト�
 チュートリアル進むにつれ増える可能性あり。
 
 - Ruby
-- Ruby Solargraph
+- rufo
 - Ruby Comment Doc
-- Beautify
+- htmlbeautifier
 - ruby-symbols
 - endwise
 
@@ -53,53 +53,45 @@ msys2 のホームディレクトリは`msys2インストールディレクト�
 拡張機能の説明に書いてあります。
 
 - rubocop
-- solargraph
+- rcodetools
+- fasterer
+- reek
 - ruby-debug-ide
-- debase (or byebug)
+- debase
+- htmlbeautifier
+- debride
+- rubyLocate
 
 ### 設定
 
 各拡張機能の説明を読んだほうがいいと思います。
-パスは読み替えてください。
 
 ```json:setting.json
 {
-    // solargraph
-    "solargraph.diagnostics": true,
-    "solargraph.commandPath": "E:\\Applications\\System\\Ruby\\ruby2431\\bin\\solargraph.bat",
-    "solargraph.autoformat": true,
-    "solargraph.symbols": true,
-    "solargraph.completion": true,
-
-    // ruby
-    "ruby.format": false,
-    "ruby.intellisense": false,
-    "ruby.lint": {
-        "reek": true,
-        "rubocop": false,
-        "ruby": true, //Runs ruby -wc
-        "fasterer": true,
-        "debride": true,
-        "ruby-lint": true
+  "ruby.format": false,
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.intellisense": false,
+  "ruby.lint": {
+    "rubocop": {
+      "lint": true, //enable all lint cops.
+      // "only": [ /* array: Run only the specified cop(s) and/or cops in the specified departments. */ ],
+      // "except": [ /* array: Run all cops enabled by configuration except the specified cop(s) and/or departments. */ ],
+      // "forceExclusion": true, //Add --force-exclusion option
+      // "require": [ /* array: Require Ruby files. */ ],
+      "rails": true //Run extra rails cops
     },
-    "ruby.codeCompletion": false,
-    "ruby.useLanguageServer": false,
-    "ruby.locate": {
-        "exclude": "{**/@(test|spec|tmp|.*),**/@(test|spec|tmp|.*)/**,**/*_spec.rb}",
-        "include": "**/*.rb"
+    "ruby": true, //Runs ruby -wc
+    "reek": true,
+    "fasterer": true,
+    "ruby-lint": true,
+    "debride": {
+      "rails": true //Add some rails call conversions.
     },
-
-    // beautify(erbをhtmlに追加)
-    "beautify.language": {
-        "js": {
-          "type": ["javascript", "json"],
-          "filename": [".jshintrc", ".jsbeautifyrc"]
-          // "ext": ["js", "json"]
-          // ^^ to set extensions to be beautified using the javascript beautifier
-        },
-        "css": ["css", "scss"],
-        "html": ["htm", "html", "erb"],
-    }
-    // ^^ providing just an array sets the VS Code file type
+  },
+  "ruby.useLanguageServer": true,
+  "ruby.locate": {
+    "exclude": "{**/@(test|spec|tmp|.*),**/@(test|spec|tmp|.*)/**,**/*_spec.rb}",
+    "include": "**/*.rb"
+  },
 }
 ```
